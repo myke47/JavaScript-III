@@ -29,12 +29,13 @@ const game = ({
 });
 
 function CharacterStats(){
-  this.healthPoints = healthPoints.name;
-  Humanoid.prototype.takeDamage = function(){
-    return `${this.name} took damage.`;
-  }
-  mage.takeDamage.call(); 
-  mage.takeDamage.apply();
+  // this.healthPoints = healthPoints.name;
+  // Humanoid.prototype.takeDamage = function(){
+  //   return `${this.name} took damage.`;
+  // }
+  let takeDamage => `${this.name} took damage.`
+  takeDamage.call(); 
+  takeDamage.apply();
 };
 
 function Humanoid(attributes) {
@@ -47,9 +48,10 @@ function Humanoid(attributes) {
   Humanoid.prototype.greet = function () {
     return `${this.name} offers a greeting in ${this.language}.`;
   };
+
 }
 
-
+healthPoints 
 
 /*
   === CharacterStats ===
@@ -128,6 +130,7 @@ function Humanoid(attributes) {
   });
 
   // console.log(game);
+  console.log()
   console.log(mage.createdAt); // Today's date
   console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
   console.log(swordsman.healthPoints); // 15
@@ -136,7 +139,7 @@ function Humanoid(attributes) {
   console.log(mage.weapons); // Staff of Shamalama
   console.log(archer.language); // Elvish
   console.log(archer.greet()); // Lilith offers a greeting in Elvish.
-  console.log(mage.takeDamage()); // Bruce took damage.
+  console.log(mage.takeDamage('Bruce')); // Bruce took damage.
   console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
 
 

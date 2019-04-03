@@ -52,27 +52,27 @@
 
 // Principle 4
 
-const myObj2 = {
-    greeting: 'Hello',
-    speak: function() {
-      console.log('implicit this: ===', this);
-      return `${this.greeting}, world!`
-    }
-  };
+// const myObj2 = {
+//     greeting: 'Hello',
+//     speak: function() {
+//       console.log('implicit this: ===', this);
+//       return `${this.greeting}, world!`
+//     }
+//   };
   
-  myObj2.speak();
+//   myObj2.speak();
   
-  function Person(obj)  {
-    this.name = obj.name;
-    this.age = obj.age;
-    this.speak = function() {
-      console.log(`This new binding` ,this);
-      return `Hello, my name is ${this.name}, and I am ${this.age} years old!`;
-    }
-  }
+//   function Person(obj)  {
+//     this.name = obj.name;
+//     this.age = obj.age;
+//     this.speak = function() {
+//       console.log(`This new binding` ,this);
+//       return `Hello, my name is ${this.name}, and I am ${this.age} years old!`;
+//     }
+//   }
   
-  const myke = new Person({name: 'Myke', age: 40});
-  const nevan = new Person({name: 'Nevan', age: '13'});
+//   const myke = new Person({name: 'Myke', age: 40});
+//   const nevan = new Person({name: 'Nevan', age: '13'});
   
   // nevan.speak.call(myke); 
   // myke.speak.apply(nevan);

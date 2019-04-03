@@ -15,14 +15,38 @@
   * dimensions (These represent the character's size in the video game)
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
-const game = new GameObject({
+const game = ({
   createdAt: new Date(),
   dimensions: {
     length: 1,
     width: 2,
     height: 4,
+  },
+  destroy(){
+    return `${this.name} was removed from the game.`;
   }
-})
+  
+});
+
+function CharacterStats(health){
+  this.healthPoints = healthPoints.name;
+  Humanoid.prototype.takeDamage = function(){
+    return `${this.name} took damage.`;
+  }
+};
+
+function Humanoid(attributes) {
+  this.name = attributes.name;
+  this.team = attributes.team;
+  this.weapons = attributes.weapons;
+  this.language = attributes.language;
+
+  Humanoid.prototype.greet = function () {
+    return `${this.name} offers a greeting in ${this.language}.`;
+  };
+}
+
+
 
 /*
   === CharacterStats ===
@@ -100,6 +124,7 @@ const game = new GameObject({
     language: 'Elvish',
   });
 
+  console.log(game);
   console.log(mage.createdAt); // Today's date
   console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
   console.log(swordsman.healthPoints); // 15

@@ -28,11 +28,13 @@ const game = ({
   
 });
 
-function CharacterStats(health){
+function CharacterStats(){
   this.healthPoints = healthPoints.name;
   Humanoid.prototype.takeDamage = function(){
     return `${this.name} took damage.`;
   }
+  mage.takeDamage.call(); 
+  mage.takeDamage.apply();
 };
 
 function Humanoid(attributes) {
@@ -40,6 +42,7 @@ function Humanoid(attributes) {
   this.team = attributes.team;
   this.weapons = attributes.weapons;
   this.language = attributes.language;
+  this.dimension = attributes.dimensions;
 
   Humanoid.prototype.greet = function () {
     return `${this.name} offers a greeting in ${this.language}.`;
@@ -124,7 +127,7 @@ function Humanoid(attributes) {
     language: 'Elvish',
   });
 
-  console.log(game);
+  // console.log(game);
   console.log(mage.createdAt); // Today's date
   console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
   console.log(swordsman.healthPoints); // 15
